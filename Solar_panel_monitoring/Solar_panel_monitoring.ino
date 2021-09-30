@@ -16,9 +16,10 @@ float Rf= 1023/((30)/(30+7.5));
 float Voltage_divide_value=0;
 int Voltage_divide_input=0;
 float finalVoltage=0;
-////////////////////////////////////////////////////////////
-int val_0 = 0;       
-int val_1 = 0;
+
+
+// Temperatura e Luminosidade 
+
 float Vlight = 0.0;
 int Temp = 0;
 
@@ -42,10 +43,12 @@ void loop(){
   Serial.print("Current = ");
   Serial.println(currentValue,3);
 
-  
+  // Leitura da Luminosidade
   Vlight = analogRead(A3);  
   Serial.print("Light = ");         
   Serial.println(Vlight*100/1023);
+
+  //Leitura da Temperatura
   Temp = analogRead(A5);  
   float TempCel = (Temp/1024.0)*500;
   Serial.print("Temp = ");  
